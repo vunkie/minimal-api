@@ -51,8 +51,30 @@ app.MapPost("/administradores/login", ([FromBody] LoginDTO loginDTO, iAdministra
 #endregion
 
 #region Veiculos
+ErrosDeValidacao validaDTO(VeiculoDTO veiculoDTO)
+{
+    var validacao = new ErrosDeValidacao{
+        Mensagens = new List<string>()
+    };
+    if (string.IsNullOrEmpty(veiculoDTO.Nome))
+        validacao.Mensagens.Add("Nome é obrigatório");
+    if (string.IsNullOrEmpty(veiculoDTO.Marca))
+        validacao.Mensagens.Add("Marca é obrigatório");
+    if (veiculoDTO.Ano < 1900 || veiculoDTO.Ano > DateTime.Now.Year + 1)
+        validacao.Mensagens.Add("Ano inválido");
+    return validacao;
+}
+
 app.MapPost("/veiculos", ([FromBody] VeiculoDTO veiculoDTO, iVeiculoServico veiculoServico) =>
 {
+
+    var validacao = validaDTO(veiculoDTO);
+    if (validacao.Mensagens.Count > 0)
+    {
+        return Results.BadRequest(validacao);
+    }
+
+
     var veiculo = new Veiculo
     {
         Marca = veiculoDTO.Marca,
@@ -81,11 +103,21 @@ app.MapGet("/veiculos/{id}", ([FromRoute] int id, [FromServices] iVeiculoServico
 
 app.MapPut("/veiculos/{id}", ([FromRoute] int id, [FromBody] VeiculoDTO veiculoDTO, [FromServices] iVeiculoServico veiculoServico) =>
 {
+
+
+
     var veiculo = veiculoServico.BuscaPorId(id);
     if (veiculo == null)
     {
         return Results.NotFound();
     }
+
+    var validacao = validaDTO(veiculoDTO);
+    if (validacao.Mensagens.Count > 0)
+    {
+        return Results.BadRequest(validacao);
+    }
+
     veiculo.Marca = veiculoDTO.Marca;
     veiculo.Nome = veiculoDTO.Nome;
     veiculo.Ano = veiculoDTO.Ano;
