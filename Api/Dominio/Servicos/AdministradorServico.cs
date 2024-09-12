@@ -4,7 +4,7 @@ using System.Data.Common;
 using minimal_api.Dominio.DTOs;
 using minimal_api.Dominio.Entidades;
 using minimal_api.Infraestrutura.Db;
-using minimal_api.Infraestrutura.Interfaces;
+using minimal_api.Dominio.Interfaces;
 
 namespace minimal_api.Dominio.Servicos
 {

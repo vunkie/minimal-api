@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "minimal-api", "minimal-api.csproj", "{ADA370B6-CAA5-44B8-A0F5-D813C8A3795D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "minimal-api", "Api\minimal-api.csproj", "{27CAEA2C-BC55-4263-BEFE-6EDA908E9644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D80A1DE8-5AD8-468F-B3A6-7923C2C3AB1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ADA370B6-CAA5-44B8-A0F5-D813C8A3795D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADA370B6-CAA5-44B8-A0F5-D813C8A3795D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADA370B6-CAA5-44B8-A0F5-D813C8A3795D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADA370B6-CAA5-44B8-A0F5-D813C8A3795D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CAEA2C-BC55-4263-BEFE-6EDA908E9644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CAEA2C-BC55-4263-BEFE-6EDA908E9644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CAEA2C-BC55-4263-BEFE-6EDA908E9644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CAEA2C-BC55-4263-BEFE-6EDA908E9644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80A1DE8-5AD8-468F-B3A6-7923C2C3AB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80A1DE8-5AD8-468F-B3A6-7923C2C3AB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80A1DE8-5AD8-468F-B3A6-7923C2C3AB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80A1DE8-5AD8-468F-B3A6-7923C2C3AB1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {44BFF72D-A035-4AFE-A560-A891417E73F8}
+		SolutionGuid = {77B02FA3-A1B6-4A8D-AB87-61BFD1F02ED2}
 	EndGlobalSection
 EndGlobal
